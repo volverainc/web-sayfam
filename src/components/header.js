@@ -3,11 +3,13 @@ import { useEffect, useState } from 'react';
 import { Toggle } from '../Toggle';
 
 const Header = () => {
-    const { i18n } = useTranslation(localStorage.getItem('translated'));
+    const [language, setLanguage] = useState(localStorage.getItem('translated') || 'en');
+    const { i18n } = useTranslation();
 
     const handleLanguageChange = (event) => {
         i18n.changeLanguage(event.target.value);
-        localStorage.setItem("translated", i18n.language)
+        localStorage.setItem("translated", event.target.value);
+        setLanguage(event.target.value);
     };
 
     const [theme, setTheme] = useState(localStorage.getItem('dark mode') || 'default')
@@ -21,9 +23,11 @@ const Header = () => {
     };
 
     useEffect(() => {
+    
+        // Set the theme class for the body
         document.body.className = theme;
-        localStorage.setItem("dark mode", theme)
-    }, [theme]);
+        localStorage.setItem('dark mode', theme);
+      }, [i18n, language, theme]);
 
     return (
         <header>
