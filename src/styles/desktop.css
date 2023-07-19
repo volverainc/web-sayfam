@@ -1,0 +1,399 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 0;
+    width: 69%;
+    margin: 0 auto;
+
+}
+
+.header-items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-items div:nth-child(1) {
+    padding-right: 20px
+}
+
+.logo h1 {
+    margin-top: 0;
+    font-size: 1.8em;
+    color: #CBF281;
+    font-weight: bold;
+    margin-bottom: 3%;
+    line-height: 1em;
+}
+
+.hero {
+    background: linear-gradient(90deg, #4731D3 75%, #CBF281 40%);
+    height: 70vh;
+}
+
+.hero-text h1 {
+    color: #CBF281;
+    font-family: Inter;
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 59.4px */
+    margin-bottom: 5%;
+}
+
+.hero-text p {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 5%;
+}
+
+.hero-text a {
+    color: black
+}
+
+.row.hero-content {
+    align-items: center;
+    padding: 5% 0;
+    width: 69%;
+    margin: 0 auto;
+}
+
+.hero-image img {
+    width: 350px;
+    border-radius: 5%;
+}
+
+.hero-button {
+    padding: 1% 2%;
+    font-size: 15px;
+    cursor: pointer;
+    background: whitesmoke;
+    border-radius: 5px;
+    margin-right: 1%;
+    padding: 12px 20px 12px 12px;
+}
+
+.hero-button:hover {
+    background: #c8c8c8
+}
+
+.skills-title h1 {
+    color: #4832D3;
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.48px;
+}
+
+.skills-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 0;
+    width: 69%;
+    margin: 0 auto;
+}
+
+.skills-thumbnails {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%
+}
+
+.skills-thumbnails img {
+    box-shadow: 0px 0px 9px 0px #c7c7c7;
+    height: 80px;
+    border-radius: 20px;
+}
+
+.skills-thumbnails span {
+    padding-left: 6%;
+    color: #868585;
+    font-weight: 500;
+    font-size: 1.3em;
+    font-family: Inter;
+}
+
+.skills-map {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.skills-icons {
+    width: 69%;
+}
+
+.row.profile-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 1% 0 5%;
+    width: 69%;
+    margin: 0 auto;
+}
+
+.profile-info,
+.profile-img,
+.profile-about {
+    width: 33.3%;
+}
+
+.col-sm-4.profile-info {
+    padding-left: 0;
+}
+
+.col-sm-4.profile-about {
+    padding-right: 0
+}
+
+.profile p {
+font-family: Inter;
+}
+
+.profile-title {
+    display: flex;
+    justify-content: space-between;
+    width: 69%;
+    margin: 0 auto;
+}
+
+.profile-title h1 {
+    color: #CBF281;
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 48px */
+    letter-spacing: 0.48px;
+}
+
+.profile {
+    background-color: #4731D3;
+    padding-top: 5%
+}
+
+.profile h3 {
+    color: #fff;
+    font-size: 1.6em;
+    font-weight: 500;
+    font-family: Inter;
+}
+
+.profile-img img {
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 5%;
+}
+
+table {
+    text-align: left;
+    color: #fff;
+    margin-top: 20px;
+    border-collapse: separate;
+    border-spacing: 0 1em;
+}
+
+th {
+    color: #CBF281;
+    font-weight: 500;
+    width: 30%;
+    font-family: Inter;
+}
+
+td {
+    width: 50%;
+    font-family: Inter;
+}
+
+.toggle-label {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 25px;
+}
+
+.toggle-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-span {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2c3e50;
+    transition: 0.3s;
+    border-radius: 30px;
+}
+
+.toggle-span:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 5px;
+    bottom: 2.6px;
+    background-color: #ffec07;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.toggle-input:checked+.toggle-span {
+    background-color: #924edd;
+}
+
+
+.toggle-input:checked+.toggle-span:before {
+    transform: translateX(29px);
+}
+
+.dark-span {
+    padding-left: 10px;
+    font-weight: 500;
+    font-size: .9em;
+    font-family: Inter;
+}
+
+.language-button {
+    color: #CBF281;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: Inter;
+}
+
+.footer h1 {
+    color: #4731D3;
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 72px; /* 150% */
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5% 0;
+    width: 69%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer p {
+    color: #120B39;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 36px */
+}
+
+.email-button {
+    text-decoration: underline;
+    font-size: 1.4em;
+    color: #4731D3
+}
+
+.footer a {
+    color: #4731D3;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-evenly;
+    width: 25%;
+    margin: 0 auto;
+    padding-top: 3%;
+}
+
+.socials a {
+    font-size: 1.4em;
+}
+
+.projects {
+    background-color: #CBF281;
+    padding-bottom: 5%;
+}
+
+.projects-title {
+    padding: 5% 0 0 0;
+    width: 69%;
+    margin: 0 auto;
+}
+
+.projects-title h1 {
+    color: #4731D3;
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 48px */
+    letter-spacing: 0.48px;
+}
+
+.row.project-card {
+    width: 69%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 5px rgb(197 197 197);
+    margin-bottom: 30px;
+    margin-top: 5%;
+}
+
+.tag-span {
+    margin-right: 3%;
+    background-color: #4731D3;
+    border-radius: 20px;
+    padding: 1% 4%;
+    color: #fff
+}
+
+.project-description {
+    margin-bottom: 7%;
+    margin-top: 3%
+}
+
+.project-links {
+    margin-top: 7%
+}
+
+.project-links a {
+    margin-right: 3%;
+    color: #000;
+    font-size: 1.2em
+}
+
+.row.project-card .col-sm-8 {
+    padding: 5% 4% 3%;
+}
+
+.row.project-card .col-sm-4 {
+    padding: 0;
+}
+
+.row.project-card .col-sm-4 img {
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    object-fit: cover;
+}
+
+.row.project-card .col-sm-8 h2 {
+    color: var(--default-indigo-700, #4338CA);
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 32px */
+}

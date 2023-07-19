@@ -1,0 +1,162 @@
+/*Mobile Phones*/
+@media only screen and (max-width: 767px) {
+    .row.hero-content {
+        width: 85%;
+        text-align: center;
+    }
+
+    .hero {
+        background: #4731D3;
+        height: auto;
+    }
+
+    .dark .hero {
+        background: #0c0a16
+    }
+
+    .hero-text h1 {
+        font-size: 2em;
+    }
+
+    .hero-image img {
+        margin-top: 10%;
+    }
+
+    .hero-text p {
+        margin-bottom: 8%;
+        font-size: 1.2em;
+    }
+
+    header {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-top: 5%;
+    }
+
+    .header-items {
+        margin-top: 5%
+    }
+
+    .dark-span {
+        color: #CBF281
+    }
+
+    .skills-content {
+        flex-direction: column;
+        width: 85%;
+    }
+
+    .skills-title h1 {
+        margin-bottom: 10%;
+    }
+
+    .skills-thumbnails {
+        flex-direction: column;
+    }
+
+    .skills-map {
+        grid-template-columns: 70% 70%;
+    }
+
+    .skills-thumbnails span {
+        font-size: 1em;
+        padding-left: 0
+    }
+
+    .row.profile-content {
+        width: 85%;
+    }
+
+    .profile-title {
+        width: 85%;
+    }
+
+    .profile .col-sm-4 {
+        margin-bottom: 10%;
+        padding: 0
+    }
+
+    .profile-img img {
+        width: 300px;
+    }
+
+    .row.project-card {
+        width: 85%;
+    }
+
+    .projects-title {
+        padding: 5% 0 5% 0;
+        width: 85%;
+    }
+
+    .row.project-card .col-sm-4 img {
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0;
+    }
+
+    .footer {
+        width: 85%;
+    }
+
+    .socials {
+        width: 50%;
+        padding-top: 5%;
+    }
+
+    .footer h1 {
+        font-size: 1.5em;
+        line-height: 1em;
+    }
+
+    .footer p {
+        font-size: 1em;
+    }
+
+    .modal-base {
+        width: 90%
+    }
+}
+
+/* Tablet Devices */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .row.hero-content {
+        width: 85%;
+    }
+
+    .hero {
+        height: 40vh;
+    }
+
+    .skills-content {
+        width: 85%;
+        flex-direction: column;
+    }
+
+    .skills-map {
+        grid-template-columns: 70% 70%;
+        margin-top: 10%;
+    }
+
+    .row.profile-content {
+        width: 85%;
+    }
+
+    .profile-title {
+        width: 85%;
+    }
+
+    .row.project-card {
+        width: 85%;
+    }
+
+    .projects-title {
+        width: 85%;
+    }
+
+    header {
+        width: 85%;
+    }
+}

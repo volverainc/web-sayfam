@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import 'react-toastify/dist/ReactToastify.css';
+import Hero from './components/hero';
+import Skills from './components/skills';
+import Profile from './components/profile';
+
+import "./styles/dark.css"
+import Projects from './components/projects';
+import Footer from './components/footer';
+import "./styles/responsive.css"
+import { useState } from 'react';
+
+function App(props) {
+  const {theme} = props
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${theme}`}>
+      <Hero />
+      <Skills />
+      <Profile />
+      <Projects />
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,74 @@
+.dark {
+  background-color: #2c2b2b;
+  color: #fff !important;
+}
+
+.dark .hero {
+  background: linear-gradient(90deg, #0c0a16 75%, #161616 40%);
+}
+
+.dark .skills-title h1 {
+  color: #CBF281;
+}
+
+.dark .profile {
+  background-color: #0c0a16;
+}
+
+.dark .profile-title h1 {
+  color: #CBF281;
+}
+
+.dark .skills-thumbnails img {
+  box-shadow: 0px 0px 9px 0px #3b3b3b;
+}
+
+.dark .skills-thumbnails span {
+  color: #fff
+}
+
+.dark .hero-button {
+  color: #333
+}
+
+.dark .footer h1 {
+  color: #CBF281;
+}
+
+.dark .footer p {
+  color: #fff;
+}
+
+.dark .footer a {
+  color: whitesmoke
+}
+
+.dark .projects {
+  background-color: #161616;
+}
+
+.dark .projects-title h1 {
+  color: #CBF281
+}
+
+.dark .row.project-card {
+  background-color: #000;
+}
+
+.dark .projects .col-sm-8 h2 {
+  color: #CBF281
+}
+
+.dark .tag-span {
+  background-color: #CBF281;
+  color: black;
+}
+
+.dark .projects a {
+  color: #fff
+}
+
+.dark .row.project-card {
+  box-shadow: none;
+  border: 1px solid rgb(78, 77, 77)
+}
