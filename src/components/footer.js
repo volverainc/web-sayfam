@@ -1,18 +1,23 @@
 import { useTranslation } from "react-i18next";
 import { socials } from "../datasets/datas"
 import emailjs, { init } from "@emailjs/browser";
-import { useState, useRef } from "react";
-import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 'reactstrap';
+import { useState, useRef, useEffect } from "react";
+import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input, FormFeedback } from 'reactstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import * as yup from 'yup';
 
 const Footer = () => {
     const { t } = useTranslation();
     const [modal, setModal] = useState(false);
-
-    const toggle = () => setModal(!modal);
-    init("53c91Hwblm1zRRUNM");
     const form = useRef();
+   
+    const toggle = () => {
+        setModal(!modal)
+    };
+
+    init("53c91Hwblm1zRRUNM");
+
     const handleSubmit = (e) => {
         e.preventDefault();
         emailjs
@@ -37,6 +42,49 @@ const Footer = () => {
             });
     };
 
+        const [contact, setContact] = useState({
+            from_name: "",
+            reply_to: "",
+            message: "",
+        });
+
+        const [ContactErrs, setContactErrs] = useState({
+            from_name: "",
+            reply_to: "",
+            message: "",
+        });
+
+        const [valid, setValid] = useState(false);
+      
+        const ContactFormSchema = yup.object().shape({
+            from_name: yup.string().required("required"),
+            reply_to: yup.string().email().required("required"),
+            message: yup.string().min(25, "min. 25 characters"),
+        });
+
+        const inputChangeHandler = (e) => {
+            const { name, value } = e.target;
+        
+            yup.reach(ContactFormSchema, name)
+              .validate(value)
+              .then((valid) => {
+                setContactErrs({ ...ContactErrs, [name]: "" });
+              })
+              .catch((err) => {
+                setContactErrs({ ...ContactErrs, [name]: err.errors[0] });
+              });
+        
+              setContact({ ...contact, [name]: value });
+          };
+
+          useEffect(() => {
+            ContactFormSchema.isValid(contact).then((vld) => setValid(vld));
+          }, [contact]);
+        
+          useEffect(() => {
+            console.log("contactErrs: ", ContactErrs);
+          }, [ContactErrs]);
+
     return (
         <div className="footer">
             <ToastContainer
@@ -56,40 +104,52 @@ const Footer = () => {
             <button className="email-button" onClick={toggle}>hello@emresert.com</button>
 
             <Modal isOpen={modal} toggle={toggle}>
-                <ModalHeader toggle={toggle}>Drop me a line 👋</ModalHeader>
+                <ModalHeader toggle={toggle}>Contact me</ModalHeader>
                 <ModalBody>
                     <Form onSubmit={handleSubmit} ref={form}>
                         <FormGroup>
-                            <Label for="name">
+                            <Label for="from_name">
                                 Name
                             </Label>
                             <Input
-                                id="name"
+                                id="from_name"
                                 name="from_name"
                                 type="text"
+                                onChange={inputChangeHandler}
+                                value={contact.from_name}
+                                invalid={!!ContactErrs.from_name}
                             />
+                            <FormFeedback>{ContactErrs.from_name}</FormFeedback>
                         </FormGroup>
                         <FormGroup>
-                            <Label for="email">
+                            <Label for="reply_to">
                                 Email
                             </Label>
                             <Input
-                                id="email"
+                                id="reply_to"
                                 name="reply_to"
                                 type="email"
+                                onChange={inputChangeHandler}
+                                value={contact.reply_to}
+                                invalid={!!ContactErrs.reply_to}
                             />
+                            <FormFeedback>{ContactErrs.reply_to}</FormFeedback>
                         </FormGroup>
                         <FormGroup>
-                            <Label for="textarea">
+                            <Label for="message">
                                 How can I help you?
                             </Label>
                             <Input
-                                id="textarea"
+                                id="message"
                                 name="message"
                                 type="textarea"
+                                onChange={inputChangeHandler}
+                                value={contact.message}
+                                invalid={!!ContactErrs.message}
                             />
+                            <FormFeedback>{ContactErrs.message}</FormFeedback>
                         </FormGroup>
-                        <Button>
+                        <Button type="submit" disabled={!valid}>
                             Submit
                         </Button>
                     </Form>
