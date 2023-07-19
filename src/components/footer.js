@@ -13,15 +13,17 @@ const Footer = () => {
     const form = useRef();
     const handleSubmit = (e) => {
         e.preventDefault();
-        emailjs.sendForm("service_tnxoo6j", "template_r5kpzxr", e.target, "hello@emresert.com").then(
+        emailjs
+        .sendForm("service_tnxoo6j", "template_r5kpzxr", e.target, "hello@emresert.com")
+        .then(
           (result) => {
             alert("Message Sent Successfully");
             console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
           }
-        );
+        )
+        .catch((error) => {
+          console.log("Error sending email:", error);
+        });
     };
 
     return (
