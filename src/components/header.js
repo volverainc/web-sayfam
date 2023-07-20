@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import { Toggle } from '../Toggle';
-import en from '../assets/en.png'
 const Header = () => {
     const [language, setLanguage] = useState(localStorage.getItem('translated') || 'en');
     const { i18n } = useTranslation();
@@ -23,8 +22,6 @@ const Header = () => {
     };
 
     useEffect(() => {
-    
-        // Set the theme class for the body
         document.body.className = theme;
         localStorage.setItem('dark mode', theme);
       }, [i18n, language, theme]);
@@ -44,7 +41,8 @@ const Header = () => {
                     <Toggle
                         toggled={true}
                         onClick={toggleTheme}
-                    /><span className='dark-span'>{theme === "dark" ? "LIGHT MODE" : "DARK MODE"}</span>
+                    />
+                    <span className='dark-span'>{theme === "dark" ? "LIGHT MODE" : "DARK MODE"}</span>
                 </div>
             </div>
         </header>

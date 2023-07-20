@@ -37,7 +37,8 @@ header {
     font-size: 54px;
     font-style: normal;
     font-weight: 700;
-    line-height: 110%; /* 59.4px */
+    line-height: 110%;
+    /* 59.4px */
     margin-bottom: 5%;
 }
 
@@ -151,7 +152,7 @@ header {
 }
 
 .profile p {
-font-family: Inter;
+    font-family: Inter;
 }
 
 .profile-title {
@@ -167,7 +168,8 @@ font-family: Inter;
     font-size: 48px;
     font-style: normal;
     font-weight: 700;
-    line-height: 100%; /* 48px */
+    line-height: 100%;
+    /* 48px */
     letter-spacing: 0.48px;
 }
 
@@ -275,7 +277,8 @@ td {
     font-size: 48px;
     font-style: normal;
     font-weight: 700;
-    line-height: 72px; /* 150% */
+    line-height: 72px;
+    /* 150% */
 }
 
 .footer {
@@ -295,7 +298,8 @@ td {
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 36px */
+    line-height: 150%;
+    /* 36px */
 }
 
 .email-button {
@@ -339,7 +343,8 @@ td {
     font-size: 48px;
     font-style: normal;
     font-weight: 700;
-    line-height: 100%; /* 48px */
+    line-height: 100%;
+    /* 48px */
     letter-spacing: 0.48px;
 }
 
@@ -397,5 +402,6 @@ td {
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
-    line-height: 100%; /* 32px */
+    line-height: 100%;
+    /* 32px */
 }

@@ -54,7 +54,7 @@ export const socials = [
         link: "https://codepen.io/volverainc"
     },
     {
-        icon:"fa-brands fa-instagram fa-lg",
+        icon: "fa-brands fa-instagram fa-lg",
         link: "#"
     }
 ]
@@ -77,7 +77,7 @@ export const projects = [
         thumbnail: screenshot,
         title: "Teknolojik Yemekler",
         description: "Attractive looking food ordering website for restaurants. The website provides an extremely easy and fast ordering process. ",
-        tags: ["redux","vercel","react"],
+        tags: ["redux", "vercel", "react"],
         url: "https://s7-challenge-pizza.vercel.app/",
         github: "https://github.com/volverainc/fsweb-s7-challenge-pizza"
     },
@@ -85,7 +85,7 @@ export const projects = [
         thumbnail: screenshot2,
         title: "Fliperr",
         description: "A simple domain portfolio website designed on WordPress with a fully custom coded theme by me. You can easily add your domains to the site and start receiving offers from prospective buyers.  ",
-        tags: ["wordpress","php", "cpanel"],
+        tags: ["wordpress", "php", "cpanel"],
         url: "https://fliperr.com/",
         github: "#"
     }

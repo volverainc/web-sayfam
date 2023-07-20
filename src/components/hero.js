@@ -6,7 +6,7 @@ import { heroButtons } from "../datasets/datas";
 
 const Hero = () => {
     const { t } = useTranslation();
-
+    
     return (
         <div className="hero">
             <Header />

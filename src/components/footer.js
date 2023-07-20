@@ -8,100 +8,98 @@ import 'react-toastify/dist/ReactToastify.css';
 import * as yup from 'yup';
 
 const Footer = () => {
-    const { t , i18n } = useTranslation();
+    const { t } = useTranslation();
     const [modal, setModal] = useState(false);
     const form = useRef();
-   
+
     const toggle = () => {
         setModal(!modal)
     };
 
     init("53c91Hwblm1zRRUNM");
 
-        const [contact, setContact] = useState({
-            from_name: "",
-            reply_to: "",
-            message: "",
-        });
+    const [contact, setContact] = useState({
+        from_name: "",
+        reply_to: "",
+        message: "",
+    });
 
-        const [ContactErrs, setContactErrs] = useState({
-            from_name: "",
-            reply_to: "",
-            message: "",
-        });
+    const [ContactErrs, setContactErrs] = useState({
+        from_name: "",
+        reply_to: "",
+        message: "",
+    });
 
-        const [valid, setValid] = useState(false);
-      
-        const ContactFormSchema = yup.object().shape({
-            from_name: yup.string().required("required"),
-            reply_to: yup.string().email().required("required"),
-            message: yup.string().min(25, "min. 25 characters"),
-        });
+    const [valid, setValid] = useState(false);
 
-        const inputChangeHandler = (e) => {
-            const { name, value } = e.target;
-        
-            yup.reach(ContactFormSchema, name)
-              .validate(value)
-              .then((valid) => {
+    const ContactFormSchema = yup.object().shape({
+        from_name: yup.string().required("required"),
+        reply_to: yup.string().email().required("required"),
+        message: yup.string().min(25, "min. 25 characters"),
+    });
+
+    const inputChangeHandler = (e) => {
+        const { name, value } = e.target;
+
+        yup.reach(ContactFormSchema, name)
+            .validate(value)
+            .then((valid) => {
                 setContactErrs({ ...ContactErrs, [name]: "" });
-              })
-              .catch((err) => {
+            })
+            .catch((err) => {
                 setContactErrs({ ...ContactErrs, [name]: err.errors[0] });
-              });
-        
-              setContact({ ...contact, [name]: value });
-          };
-
-          useEffect(() => {
-            ContactFormSchema.isValid(contact).then((vld) => setValid(vld));
-          }, [contact]);
-        
-          useEffect(() => {
-            console.log("contactErrs: ", ContactErrs);
-          }, [ContactErrs]);
-
-          const handleSubmit = (e) => {
-            e.preventDefault();
-        
-            ContactFormSchema.isValid(contact).then((valid) => {
-                if (valid) {
-                    emailjs
-                        .sendForm("service_tnxoo6j", "template_r5kpzxr", e.target, "53c91Hwblm1zRRUNM")
-                        .then((result) => {
-                            toast(`🦄 ${t("toastSuccess")}`, {
-                                position: "top-right",
-                                autoClose: 2000,
-                                hideProgressBar: false,
-                                closeOnClick: true,
-                                pauseOnHover: true,
-                                draggable: true,
-                                progress: undefined,
-                                theme: "light",
-                            });
-                            setContact({
-                                from_name: "",
-                                reply_to: "",
-                                message: "",
-                              });
-                        })
-                        .catch((error) => {
-                            console.log("Error sending email:", error);
-                        });
-                } else {
-                    toast.error(`${t('toastError')}`, {
-                        position: "top-right",
-                        autoClose: 2000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "light",
-                    });;
-                }
             });
-        };
+
+        setContact({ ...contact, [name]: value });
+    };
+
+    useEffect(() => {
+        ContactFormSchema.isValid(contact).then((vld) => setValid(vld));
+    }, [contact]);
+
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        ContactFormSchema.isValid(contact).then((valid) => {
+            if (valid) {
+                emailjs
+                    .sendForm("service_tnxoo6j", "template_r5kpzxr", e.target, "53c91Hwblm1zRRUNM")
+                    .then((result) => {
+                        toast(`🦄 ${t("toastSuccess")}`, {
+                            position: "top-right",
+                            autoClose: 2000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "light",
+                        });
+                        setContact({
+                            from_name: "",
+                            reply_to: "",
+                            message: "",
+                        });
+                    })
+                    .catch((error) => {
+                        console.log("Error sending email:", error);
+                    });
+            } else {
+                toast.error(`${t('toastError')}`, {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });;
+            }
+        });
+    };
 
 
     return (
