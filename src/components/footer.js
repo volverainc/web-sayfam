@@ -120,7 +120,7 @@ const Footer = () => {
             />
             <h1>{t('footerTitle')}</h1>
             <p>{t('footerText')}</p>
-            <button className="email-button" onClick={toggle}>hello@emresert.com</button>
+            <button data-cy="modal-button" className="email-button" onClick={toggle}>hello@emresert.com</button>
 
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>{t('modalHeader')}</ModalHeader>
@@ -131,6 +131,7 @@ const Footer = () => {
                                 {t('modalName')}
                             </Label>
                             <Input
+                                data-cy="from-name"
                                 id="from_name"
                                 name="from_name"
                                 type="text"
@@ -145,6 +146,7 @@ const Footer = () => {
                                 Email
                             </Label>
                             <Input
+                                data-cy="reply-to"
                                 id="reply_to"
                                 name="reply_to"
                                 type="email"
@@ -159,6 +161,7 @@ const Footer = () => {
                                 {t('modalTextarea')}
                             </Label>
                             <Input
+                                data-cy="message"
                                 id="message"
                                 name="message"
                                 type="textarea"
@@ -168,7 +171,7 @@ const Footer = () => {
                             />
                             <FormFeedback>{ContactErrs.message}</FormFeedback>
                         </FormGroup>
-                        <Button type="submit" disabled={!valid}>
+                        <Button data-cy="submit-button" type="submit" disabled={!valid}>
                             {t('modalSubmit')}
                         </Button>
                     </Form>
