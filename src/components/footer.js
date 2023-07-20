@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import * as yup from 'yup';
 
 const Footer = () => {
-    const { t } = useTranslation();
+    const { t , i18n } = useTranslation();
     const [modal, setModal] = useState(false);
     const form = useRef();
    
@@ -17,30 +17,6 @@ const Footer = () => {
     };
 
     init("53c91Hwblm1zRRUNM");
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        emailjs
-            .sendForm("service_tnxoo6j", "template_r5kpzxr", e.target, "53c91Hwblm1zRRUNM")
-            .then(
-                (result) => {
-                    toast('🦄 Message Sent Successfully', {
-                        position: "top-right",
-                        autoClose: 2000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "light",
-                    });
-                    console.log(result.text);
-                }
-            )
-            .catch((error) => {
-                console.log("Error sending email:", error);
-            });
-    };
 
         const [contact, setContact] = useState({
             from_name: "",
@@ -85,6 +61,49 @@ const Footer = () => {
             console.log("contactErrs: ", ContactErrs);
           }, [ContactErrs]);
 
+          const handleSubmit = (e) => {
+            e.preventDefault();
+        
+            ContactFormSchema.isValid(contact).then((valid) => {
+                if (valid) {
+                    emailjs
+                        .sendForm("service_tnxoo6j", "template_r5kpzxr", e.target, "53c91Hwblm1zRRUNM")
+                        .then((result) => {
+                            toast(`🦄 ${t("toastSuccess")}`, {
+                                position: "top-right",
+                                autoClose: 2000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                                theme: "light",
+                            });
+                            setContact({
+                                from_name: "",
+                                reply_to: "",
+                                message: "",
+                              });
+                        })
+                        .catch((error) => {
+                            console.log("Error sending email:", error);
+                        });
+                } else {
+                    toast.error(`${t('toastError')}`, {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });;
+                }
+            });
+        };
+
+
     return (
         <div className="footer">
             <ToastContainer
@@ -104,12 +123,12 @@ const Footer = () => {
             <button className="email-button" onClick={toggle}>hello@emresert.com</button>
 
             <Modal isOpen={modal} toggle={toggle}>
-                <ModalHeader toggle={toggle}>Contact me</ModalHeader>
+                <ModalHeader toggle={toggle}>{t('modalHeader')}</ModalHeader>
                 <ModalBody>
                     <Form onSubmit={handleSubmit} ref={form}>
                         <FormGroup>
                             <Label for="from_name">
-                                Name
+                                {t('modalName')}
                             </Label>
                             <Input
                                 id="from_name"
@@ -137,7 +156,7 @@ const Footer = () => {
                         </FormGroup>
                         <FormGroup>
                             <Label for="message">
-                                How can I help you?
+                                {t('modalTextarea')}
                             </Label>
                             <Input
                                 id="message"
@@ -150,7 +169,7 @@ const Footer = () => {
                             <FormFeedback>{ContactErrs.message}</FormFeedback>
                         </FormGroup>
                         <Button type="submit" disabled={!valid}>
-                            Submit
+                            {t('modalSubmit')}
                         </Button>
                     </Form>
                 </ModalBody>

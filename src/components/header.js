@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import { Toggle } from '../Toggle';
-
+import en from '../assets/en.png'
 const Header = () => {
     const [language, setLanguage] = useState(localStorage.getItem('translated') || 'en');
     const { i18n } = useTranslation();

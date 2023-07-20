@@ -118,6 +118,10 @@
     .modal-base {
         width: 90%
     }
+
+    .email-button {
+    width: 100%;
+}
 }
 
 /* Tablet Devices */

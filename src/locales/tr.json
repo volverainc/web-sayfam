@@ -13,5 +13,11 @@
     "role": "İstenilen Rol:",
     "profileAboutTitle": "Hakkımda",
     "footerTitle": "Bana ulaşın!",
-    "footerText" : "Bir sorunuz veya teklifiniz mi var, yoksa sadece merhaba mı demek istiyorsunuz? Bir email kadar uzağınızdayım."
+    "footerText" : "Bir sorunuz veya teklifiniz mi var, yoksa sadece merhaba mı demek istiyorsunuz? Bir email kadar uzağınızdayım.",
+    "modalHeader": "İletişim",
+    "modalName" : "İsim",
+    "modalTextarea" : "Size nasıl yardımcı olabilirim",
+    "modalSubmit" :  "Yolla",
+    "toastSuccess" : "Mesajınız başarıyla yollandı",
+    "toastError" : "Lütfen tüm alanları doldurunuz."
 }

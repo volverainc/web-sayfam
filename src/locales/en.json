@@ -13,5 +13,12 @@
     "role": "Desired Role:",
     "profileAboutTitle": "About Me",
     "footerTitle" : "Send me a message!",
-    "footerText" : "Got a question or proposal, or just want to say hello? Go ahead."
+    "footerText" : "Got a question or proposal, or just want to say hello? Go ahead.",
+    "modalHeader": "Contact me",
+    "modalName" : "Name",
+    "modalEmail" : "Email",
+    "modalTextarea" : "How can I help you?",
+    "modalSubmit" :  "Submit",
+    "toastSuccess" : "Message Sent Successfully",
+    "toastError" : "Please fill in all required fields."
 }
