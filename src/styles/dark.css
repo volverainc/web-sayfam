@@ -72,3 +72,11 @@
   box-shadow: none;
   border: 1px solid rgb(78, 77, 77)
 }
+
+.dark .email-button {
+  color: #CBF281;
+}
+
+.dark .modal-content {
+  color:black!important
+}
