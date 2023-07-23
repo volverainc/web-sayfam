@@ -40,7 +40,7 @@ const Profile = () => {
             </div>
                 </div>
                 <div className="col-sm-4 profile-img">
-                <img src={profileImg}></img>
+                <img alt="profile" src={profileImg}></img>
                 </div>
                 <div className="col-sm-4 profile-about">
                 <h3>

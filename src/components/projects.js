@@ -12,7 +12,7 @@ const Projects = () => {
       {projects.map((i) => (
         <div key={v4()} className="row project-card">
           <div className="col-sm-4">
-            <img src={i.thumbnail} />
+            <img alt="thumb" src={i.thumbnail} />
           </div>
           <div className="col-sm-8">
             <h2>{i.title}</h2>

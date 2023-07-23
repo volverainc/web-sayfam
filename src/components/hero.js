@@ -24,7 +24,7 @@ const Hero = () => {
                     ))}
                 </div>
                 <div className="col-sm-4 hero-image">
-                <img src={heroImg}></img>
+                <img alt="hero" src={heroImg}></img>
                 </div>
             </div>
         </div>
