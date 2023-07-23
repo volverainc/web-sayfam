@@ -3,6 +3,7 @@ import heroImg from "../assets/hero-img.jpg"
 import { useTranslation } from "react-i18next"
 import Header from "./header";
 import { heroButtons } from "../datasets/datas";
+import { v4 } from "uuid";
 
 const Hero = () => {
     const { t } = useTranslation();
@@ -17,7 +18,7 @@ const Hero = () => {
                     </h1>
                     <p>{t('heroText')}</p>
                     {heroButtons.map((i) => (
-                        <a href={i.url} target="_blank"><button className="hero-button">
+                        <a key={v4()} href={i.url} target="_blank"><button className="hero-button">
                             <i className={i.icon}></i> {i.name}
                         </button></a>
                     ))}

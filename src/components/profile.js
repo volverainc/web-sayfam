@@ -18,6 +18,7 @@ const Profile = () => {
                     {t('profileBasicInfo')}
                     </h3>
                     <table>
+                        <tbody>
                         <tr>
                             <th>{t('DoB')}</th>
                             <td>07.07.1986</td>
@@ -34,6 +35,7 @@ const Profile = () => {
                             <th>{t('role')}</th>
                             <td>Frontend, UI</td>
                         </tr>
+                        </tbody>
                     </table>
             </div>
                 </div>

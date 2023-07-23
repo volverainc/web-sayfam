@@ -7,7 +7,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from "axios";
-axios.defaults.baseURL = "http://localhost:3000/";
+import { v4 as uuidv4 } from 'uuid';
+uuidv4();
 
 i18n.init({
   interpolation: { escapeValue: false }, 

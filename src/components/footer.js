@@ -6,6 +6,7 @@ import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input, F
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as yup from 'yup';
+import { v4 } from "uuid";
 
 const Footer = () => {
     const { t } = useTranslation();
@@ -177,7 +178,7 @@ const Footer = () => {
             </Modal>
 
             <div className="socials">{socials.map((i) => (
-                <a href={i.link} target="_blank"><i className={i.icon}></i></a>
+                <a key={v4()} href={i.link} target="_blank"><i className={i.icon}></i></a>
             ))}</div>
             <ToastContainer />
         </div>

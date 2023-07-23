@@ -1,6 +1,7 @@
 import "../styles/desktop.css"
 import { skillImages } from "../datasets/datas"
 import { useTranslation } from "react-i18next";
+import { v4 } from "uuid";
 
 const Skills = () => {
     const { t } = useTranslation();
@@ -16,7 +17,7 @@ const Skills = () => {
                 <div className="skills-icons">
                     <div className="skills-map">
                         {skillImages.map((img) => (
-                            <div className="skills-thumbnails">
+                            <div key={v4()} className="skills-thumbnails">
                                 <img alt="skills" src={img.img} />
                                 <span>{img.title}</span>
                             </div>
