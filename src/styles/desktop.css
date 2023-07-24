@@ -28,7 +28,7 @@ header {
 
 .hero {
     background: linear-gradient(90deg, #4731D3 75%, #CBF281 40%);
-    height: 70vh;
+    height: 100%;
 }
 
 .hero-text h1 {

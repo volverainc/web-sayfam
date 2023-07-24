@@ -7,7 +7,6 @@
 
     .hero {
         background: #4731D3;
-        height: auto;
     }
 
     .dark .hero {
@@ -130,9 +129,9 @@
         width: 85%;
     }
 
-    .hero {
+    /* .hero {
         height: 40vh;
-    }
+    } */
 
     .skills-content {
         width: 85%;
@@ -165,8 +164,8 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+/* @media (min-width: 768px) and (max-width: 1024px) {
     .hero {
     height: 60vh;
 }
-}
+} */
